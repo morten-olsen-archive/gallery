@@ -1,0 +1,29 @@
+import { useContext, useMemo } from "react";
+import ConfigContext from "../contexts/Config";
+import { AppProvider } from '../contexts/AppContext';
+
+const useWidget = (appName: string, widgetName: string) => {
+  const { config } = useContext(ConfigContext);
+  const 
+  const { apps } = config;
+
+  const Widget = useMemo(() => {
+    const app = apps.find((app) => app.name === appName);
+    if (!app) {
+      return undefined;
+    }
+    const widget = app.widgets.find((widget) => widget.name === widgetName);
+    if (!widget) {
+      return undefined;
+    }
+    return widget.component;
+  }, [appName, widgetName]);
+
+  return (...props: any[]) => (
+    <AppProvider appName={}>
+      <Widget {...props}
+    </AppProvider>
+  );
+};
+
+export default useWidget;

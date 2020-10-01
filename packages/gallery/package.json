@@ -1,0 +1,16 @@
+{
+  "name": "@morten-olsen/gallery",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.49"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "nanoid": "^3.1.12"
+  }
+}

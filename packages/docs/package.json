@@ -1,0 +1,18 @@
+{
+  "name": "@morten-olsen/gallery-docs",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gallery-cli dev src/index"
+  },
+  "dependencies": {
+    "@morten-olsen/gallery": "^1.0.0",
+    "@morten-olsen/gallery-app-system": "^1.0.0",
+    "@morten-olsen/gallery-ui": "^1.0.0",
+    "raw-loader": "^4.0.1"
+  },
+  "devDependencies": {
+    "@morten-olsen/gallery-cli": "^1.0.0"
+  }
+}

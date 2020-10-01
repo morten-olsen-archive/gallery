@@ -1,0 +1,27 @@
+{
+  "name": "@morten-olsen/gallery-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "lerna bootstrap && tsc --build",
+    "dev:native": "lerna run --stream --scope=@morten-olsen/gallery-app start",
+    "dev:web": "lerna run --stream --scope=@morten-olsen/gallery-demo dev",
+    "dev:docs": "lerna run --stream --scope=@morten-olsen/gallery-docs dev",
+    "build:web": "lerna run --stream --scope=@morten-olsen/gallery-demo build",
+    "styleguide": "lerna run --stream --scope=@morten-olsen/gallery-styleguide storybook",
+    "ts:watch": "tsc --build --watch"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "expo-cli": "^3.27.10",
+    "lerna": "^3.22.1",
+    "nice-try": "^2.0.1",
+    "typescript": "^4.0.3"
+  }
+}

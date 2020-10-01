@@ -1,0 +1,19 @@
+{
+  "name": "@morten-olsen/gallery-demo",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "gallery-cli build src/index.ts",
+    "dev": "gallery-cli dev src/index.ts"
+  },
+  "dependencies": {
+    "@morten-olsen/gallery": "^1.0.0",
+    "@morten-olsen/gallery-app-system": "^1.0.0",
+    "@morten-olsen/gallery-app-jira": "^1.0.0"
+  },
+  "devDependencies": {
+    "@morten-olsen/gallery-cli": "^1.0.0"
+  }
+}

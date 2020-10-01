@@ -1,0 +1,39 @@
+{
+  "name": "@morten-olsen/gallery-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "gallery-cli": "bin/cli.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@hot-loader/react-dom": "^17.0.0-rc.2",
+    "@morten-olsen/gallery": "^1.0.0",
+    "@types/webpack-hot-middleware": "^2.25.3",
+    "axios": "^0.20.0",
+    "babel-loader": "^8.1.0",
+    "commander": "^6.1.0",
+    "expo-web": "^0.0.14",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^4.5.0",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.13.0",
+    "react-native-svg-web": "^1.0.9",
+    "react-native-web": "^0.13.14",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/react-dom": "^16.9.8",
+    "@types/webpack-dev-middleware": "^3.7.2"
+  }
+}

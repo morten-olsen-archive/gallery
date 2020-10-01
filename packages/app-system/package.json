@@ -1,0 +1,9 @@
+{
+  "name": "@morten-olsen/gallery-app-system",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@morten-olsen/gallery": "^1.0.0"
+  }
+}
