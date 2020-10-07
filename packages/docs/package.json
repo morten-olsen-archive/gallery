@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "gallery-cli dev src/index"
+    "dev": "gallery-cli dev src/index",
+    "build": "gallery-cli build src/index"
   },
   "dependencies": {
     "@morten-olsen/gallery": "^1.0.0",

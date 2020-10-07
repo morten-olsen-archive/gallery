@@ -48,6 +48,14 @@ export const H6 = styled(BaseText)`
   letter-spacing: 0.15px;
 `;
 
+export const Code = styled(BaseText)<{ theme: Theme }>`
+  font-family: monospace;
+  background: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.background};
+  padding: 2px 6px;
+  border-radius: 4px;
+`;
+
 export const Subtitle1 = styled(BaseText)`
   font-weight: bold;
   font-size: 16px;
@@ -62,6 +70,7 @@ export const Subtitle2 = styled(BaseText)`
 
 export const Body1 = styled(BaseText)`
   font-weight: normal;
+  line-height: 23px;
   font-size: 16px;
   letter-spacing: 0.5px;
 `;

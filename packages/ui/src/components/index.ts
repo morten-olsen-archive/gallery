@@ -8,7 +8,7 @@ export { default as Button } from "./Button";
 export { default as Tags } from "./Tag";
 export { default as List } from "./List";
 export { default as Panel } from "./Panel";
-export { default as Avatar } from "./Panel";
+export { default as Avatar } from "./Avatar";
 export { default as Margin } from "./Margin";
 export { default as Sidebar } from "./Sidebar";
 export { default as Touch } from "./Touch";

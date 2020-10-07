@@ -14,7 +14,7 @@ const Image = styled.Image<{
   border-radius: ${({ size }) => size / 2}px;
   `;
 
-const Avatar: React.FC<Props> = ({ url, size }) => (
+const Avatar: React.FC<Props> = ({ url, size = 45 }) => (
   <Image
     size={size}
     source={{ uri: url }}

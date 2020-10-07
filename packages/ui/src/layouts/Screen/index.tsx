@@ -13,12 +13,10 @@ const Wrapper = styled.View<{ theme: Theme }>`
   flex-direction: row;
   flex: 1;
   background: ${({ theme }) => theme.colors.background};
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
 `;
 
 const getSidebarWidth = (size: Sizes, visible: boolean): string => {
@@ -48,7 +46,6 @@ const SidebarControl = styled.View<{
   theme: Theme;
 }>`
   width: ${({ width }) => width};
-  overflow: hidden;
   position: absolute;
   height: 100%;
 `

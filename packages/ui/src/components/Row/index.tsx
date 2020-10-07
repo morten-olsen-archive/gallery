@@ -4,14 +4,15 @@ import Cell from './Cell';
 import Icon from './Icon';
 import { Overline, Body1, Body2 } from '../../typography';
 import { Theme } from '../../theme';
+import { nodeOrText } from '../../utils/components';
 
 interface Props {
   left?: ReactNode;
   right?: ReactNode;
   unread?: boolean;
-  overline?: string;
-  title?: string;
-  description?: string;
+  overline?: ReactNode;
+  title?: ReactNode;
+  description?: ReactNode;
   onPress?: () => void;
   children?: ReactNode;
   selected?: boolean;
@@ -59,10 +60,10 @@ const Row: React.FC<Props> = ({
       {unread && <Unread />}
       {left}
       <Main>
-        {overline && <Overline>{overline}</Overline>}
-        {title && <Body1>{title}</Body1>}
-        {description && <Body2>{description}</Body2>}
-        {children}
+        {overline && nodeOrText(overline, Overline)}
+        {title && nodeOrText(title, Body1)}
+        {description && nodeOrText(description, Body2)}
+        {children && nodeOrText(children, Body1)}
       </Main>
       {right}
     </Wrapper>
