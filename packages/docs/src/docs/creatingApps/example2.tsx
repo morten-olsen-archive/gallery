@@ -5,32 +5,36 @@ import faker from 'faker';
 
 
 export const config = `
-const system = require('@morten-olsen/gallery-app-system');
-const employees = require('./app');
+import { Config } from '@morten-olsen/gallery';
+import system from '@morten-olsen/gallery-app-system';
+import employees from './app';
 
-const config = {
+const config: Config = {
   apps: [system, employees],
 };
 
-module.exports = config;
+export default config;
 `;
 
 export const app = `
-const searcher = require('./searcher');
-const employees = {
+import { Application } from '@morten-olsen/gallery';
+import searcher from './searcher';
+
+const employees: Application = {
   name: 'Employees',
   screens: [],
   widgets: [],
   searchers: [searcher],
 };
 
-module.exports = employees;
+export default employees;
 `;
 
 export const searcher = `
-const employees = require('./data');
+import { Searcher } from '@morten-olsen/gallery';
+import employees from './data';
 
-const searcher = {
+const searcher: Searcher = {
   name: 'By name',
   action: async (input) => {
     return employees.filter(e => e.name.toLowerCase().includes(input.toLowerCase())).map((e) => ({
@@ -47,18 +51,18 @@ const searcher = {
   },
 };
 
-module.exports = searcher;
+export default searcher;
 `;
 
 export const data = `
-const faker = require('faker');
-faker.seed(0);
+import faker from 'faker';
+
 const employees = new Array(50).fill(undefined).map((a, i) => ({
   id: i,
   name: faker.name.findName(),
 }));
 
-module.exports = employees;
+export default employees;
 `;
 
 const example = {
@@ -71,9 +75,10 @@ const example = {
   main: "./config",
   modules: {
     "@morten-olsen/gallery-app-system": system,
+    "@morten-olsen/gallery": 'foo',
     faker,
   },
-  createNode: (output: any) => <App config={output} storage={new Storage()} />,
+  createNode: (output: any) => <App config={output.default} storage={new Storage()} />,
 };
 
 export default example;

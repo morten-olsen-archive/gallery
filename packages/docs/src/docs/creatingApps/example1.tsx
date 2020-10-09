@@ -3,23 +3,28 @@ import system, { Storage } from "@morten-olsen/gallery-app-system";
 import { App } from '@morten-olsen/gallery';
 
 export const config = `
-const system = require('@morten-olsen/gallery-app-system');
-const employees = require('./app');
+import { Config } from '@morten-olsen/gallery-app-system';
+import system from '@morten-olsen/gallery-app-system';
+import employees from './app';
 
-const config = {
+const config: Config = {
   apps: [system, employees],
 };
 
-module.exports = config;
+export default config;
 `;
 
 export const app = `
-const employees = {
+import { Application } from '@morten-olsen/gallery-app-system';
+
+const employees: Application = {
   name: 'Employees',
   screens: [],
   widgets: [],
   searchers: [],
 };
+
+export default employees;
 `;
 
 const example = {
@@ -30,8 +35,9 @@ const example = {
   main: "./config",
   modules: {
     "@morten-olsen/gallery-app-system": system,
+    "@morten-olsen/gallery": 'foo',
   },
-  createNode: (output: any) => <App config={output} storage={new Storage()} />,
+  createNode: (output: any) => <App config={output.default} storage={new Storage()} />,
 };
 
 export default example;

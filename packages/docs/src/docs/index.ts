@@ -1,14 +1,8 @@
-const files = (require as any).context("./", true, /.*\.doc\.ts/);
+import Document from "../types/Document";
+import * as creatingApps from "./creatingApps/index";
 
-const keys = files.keys();
-const docs = keys.map((key: string) => {
-  const module = files(key);
-
-  return {
-    path: key,
-    title: module.title,
-    component: module.default,
-  };
-});
+const docs: { [name: string]: Document } = {
+  creatingApps,
+};
 
 export default docs;

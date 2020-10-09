@@ -77,29 +77,33 @@ class ErrorBounds extends React.Component<{ children: ReactNode, error: any, set
   }
 }
 
-const Example: React.FC<Props> = ({ files, modules, main, createNode, height = 800 }) => {
+export const Example: React.FC<Props> = ({ files, modules, main, createNode, height = 800 }) => {
   const [localFiles, setLocalFiles] = useState(files);
   const [selected, setSelected] = useState(Object.keys(files)[0]);
   const [node, setNode] = useState<any>(undefined);
   const [error, setError] = useState<any>(undefined);
   const compile = useCallback(() => {
-    setError(undefined);
-    setNode(undefined);
-    try {
-      const output = compileFn(main, localFiles, modules);
-      const newComponent = createNode(output);
-      setNode(newComponent);
-    } catch (err) {
-      console.log(err);
-      setError(err);
+    const run = async () => {
+      try {
+        setError(undefined);
+        setNode(undefined);
+        const output = await compileFn(main, localFiles, modules);
+        const newComponent = createNode(output);
+        setNode(newComponent);
+      } catch (err) {
+        console.log(err);
+        setError(err);
+      };
     };
+
+    run();
   }, [localFiles, modules]);
 
   const setFileContent = useCallback((code: string) => {
-    setLocalFiles({
-      ...files,
+    setLocalFiles((current) => ({
+      ...current,
       [selected]: code,
-    });
+    }));
   }, [files, selected]);
 
   useEffect(() => {
@@ -120,7 +124,7 @@ const Example: React.FC<Props> = ({ files, modules, main, createNode, height = 8
           {Object.entries(files).map(([path]) => (
             <Row
               key={path}
-              title={<Code>{path}.js</Code>}
+              title={`${path}.tsx`}
               onPress={() => setSelected(path)}
               selected={path === selected}
             />

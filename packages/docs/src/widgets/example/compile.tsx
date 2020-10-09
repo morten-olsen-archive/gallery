@@ -1,6 +1,5 @@
-import typescript from 'typescript';
-
-const compile = (main: string, files: {[name: string]: string}, modules: {[name: string]: any}) => {
+const compile = async (main: string, files: {[name: string]: string}, modules: {[name: string]: any}) => {
+  const typescript = await import('typescript');
   const cache: {[name: string]: any} = {};
   const require = (path: string) => {
     if (modules[path]) {
@@ -15,6 +14,7 @@ const compile = (main: string, files: {[name: string]: string}, modules: {[name:
       const js = typescript.transpileModule(code, {
         compilerOptions: {
           jsx: typescript.JsxEmit.React,
+          esModuleInterop: true,
         },
       });
       const compiled = new Function('module', 'exports', 'require', js.outputText);

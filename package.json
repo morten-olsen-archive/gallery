@@ -10,6 +10,7 @@
     "dev:web": "lerna run --stream --scope=@morten-olsen/gallery-demo dev",
     "dev:docs": "lerna run --stream --scope=@morten-olsen/gallery-docs dev",
     "build:web": "lerna run --stream --scope=@morten-olsen/gallery-demo build",
+    "build:docs": "lerna run --stream --scope=@morten-olsen/gallery-docs build",
     "styleguide": "lerna run --stream --scope=@morten-olsen/gallery-styleguide storybook",
     "ts:watch": "tsc --build --watch"
   },

@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components/native';
 import { Widget } from '@morten-olsen/gallery';
 import docs from '../docs/index';
+import Markdown from '../components/Markdown';
 
 interface Props {
   id: string;
@@ -15,8 +16,21 @@ const Wrapper = styled.View`
 `;
 
 const Document: React.FC<Props> = ({ id }) => {
-  const doc = useMemo(() => docs.find((d: any) => d.path === id), [id]);
-  return (<Wrapper><doc.component /></Wrapper>);
+  const doc = useMemo(() => docs[id], [id]);
+  const content = useMemo(() => doc?.content(), [doc]);
+  if (!content) {
+    return null;
+  }
+  return (
+    <Wrapper>
+      {content.map((elm) => {
+        if (typeof elm === 'string') {
+          return <Markdown>{elm}</Markdown>
+        }
+        return elm;
+      })}
+    </Wrapper>
+  );
 };
 
 const document: Widget = {

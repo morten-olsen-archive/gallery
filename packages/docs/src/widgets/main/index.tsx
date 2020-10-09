@@ -10,7 +10,7 @@ const Main: React.FC = () => {
         fallback={{
           appName: 'Docs',
           widgetName: 'Document',
-          props: { id: './creatingApps/index.doc.tsx' },
+          props: { id: 'creatingApps' },
         }}
       />
     </Container>

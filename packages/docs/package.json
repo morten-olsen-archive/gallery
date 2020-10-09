@@ -11,7 +11,8 @@
     "@morten-olsen/gallery": "^1.0.0",
     "@morten-olsen/gallery-app-system": "^1.0.0",
     "@morten-olsen/gallery-ui": "^1.0.0",
-    "raw-loader": "^4.0.1"
+    "raw-loader": "^4.0.1",
+    "react-native-markdown-display": "^6.1.6"
   },
   "devDependencies": {
     "@morten-olsen/gallery-cli": "^1.0.0"

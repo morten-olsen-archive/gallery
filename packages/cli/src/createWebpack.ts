@@ -1,4 +1,5 @@
 import webpack, { Configuration } from "webpack";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
@@ -45,6 +46,10 @@ const createWebpack = ({
       new webpack.DefinePlugin({
         __CONFIG_LOCATION__: JSON.stringify(configLocation),
         ...(proxyUrl ? { __PROXY_URL__: JSON.stringify(proxyUrl) } : {}),
+      }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: "json",
+        openAnalyzer: false,
       }),
     ],
     module: {

@@ -15,6 +15,7 @@
     "@babel/preset-typescript": "^7.10.4",
     "@hot-loader/react-dom": "^17.0.0-rc.2",
     "@morten-olsen/gallery": "^1.0.0",
+    "@types/webpack-bundle-analyzer": "^3.8.0",
     "@types/webpack-hot-middleware": "^2.25.3",
     "axios": "^0.20.0",
     "babel-loader": "^8.1.0",
@@ -27,6 +28,7 @@
     "react-native-svg-web": "^1.0.9",
     "react-native-web": "^0.13.14",
     "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0"
